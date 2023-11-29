@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerLookAim : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer _playerRenderer;
+    private SpriteRenderer _playerRenderer;
 
     private PlayerController _controller;
 
@@ -27,7 +27,7 @@ public class PlayerLookAim : MonoBehaviour
     {
         float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        _playerRenderer.flipX = rotZ > 90 || rotZ < -90;
+        _playerRenderer.flipX = Mathf.Abs(rotZ) > 90f;
     }
     #endregion
 }

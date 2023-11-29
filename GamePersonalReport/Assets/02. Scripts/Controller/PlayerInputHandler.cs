@@ -18,7 +18,6 @@ public class PlayerInputHandler : PlayerController
     public void OnMovement(InputValue inputValue)
     {
         Vector2 moveInput = inputValue.Get<Vector2>().normalized;
-        StateMove(moveInput);
         CallMoveEvent(moveInput);
     }
 
